@@ -1,0 +1,107 @@
+// 修改插件原本的配色
+
+@editor-bgColor: #282C34;
+@editor-color: #8c8F91;
+
+[class*="v-md"] {
+  background: @editor-bgColor;
+  color: @editor-color;
+  border-color: rgba(105, 105, 105, 0.7) !important;
+}
+
+.v-md-editor__toolbar-divider::before {
+  border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+[class*="v-md-editor__toolbar"] {
+  background: @editor-bgColor;
+
+  ul {
+    li {
+      background: rgb(47, 52, 60);
+
+      &:hover {
+        background: #ccc;
+      }
+    }
+  }
+
+}
+
+[class*="CodeMirror"] { // 输入框
+  background: @editor-bgColor !important; // 背景颜色
+  color: @editor-color !important; // 侧边栏行号颜色
+}
+
+[class*="v-md-prism"] {
+  background: #393E46 !important;
+}
+
+.CodeMirror-gutters { // 输入框，侧边栏的线
+  border-right: 1px solid #999 !important;
+}
+
+// 预览样式
+
+img {
+  background-color: @editor-bgColor !important;
+}
+
+.github-markdown-body {
+  h2 {
+    border-bottom: 1px solid rgb(105, 105, 105) !important;
+  }
+
+  ul {
+    list-style: disc;
+
+    li {
+      list-style: disc;
+    }
+  }
+
+  ol {
+    list-style: decimal;
+
+    li {
+      list-style: decimal;
+    }
+  }
+
+  blockquote {
+    border-left: 0.25em solid #4B6089 !important;
+    background-color: #393E46;
+  }
+
+  div[class*=v-md-pre-wrapper-] {
+    background-color: #393E46 !important;
+
+    pre {
+      code {
+        color: #bbb;
+
+        .hljs-keyword {
+          color: #ddd;
+        }
+      }
+    }
+  }
+}
+
+// 目录导航
+
+.v-md-editor__left-area-title {
+  color: #ddd !important;
+}
+
+.v-md-editor__left-area-title:after {
+  border-bottom: 1px solid rgba(105, 105, 105, 0.7) !important;
+}
+
+.v-md-editor__toc-nav {
+  list-style: disc !important;
+
+  li {
+    list-style: disc !important;
+  }
+}
